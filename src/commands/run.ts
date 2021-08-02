@@ -36,6 +36,7 @@ export class Run extends Command {
     child.stdout.pipe(process.stdout)
     child.stderr.pipe(process.stdout)
     child.on('close', (data: number) => {
+      // eslint-disable-next-line no-negated-condition
       if (data !== 0) {
         child.stderr.on('data', (error: any) => this.sendNotification(flags, args, true, error))
       } else {
@@ -60,7 +61,7 @@ export class Run extends Command {
 
     if (flags.email) {
       await sendEmail(flags, subject, data.toString() || subject)
-      //this.log(msgId)
+      // this.log(msgId)
     }
   }
 }
