@@ -59,8 +59,8 @@ export class Run extends Command {
     }
 
     if (flags.email) {
-      const msgId = await sendEmail(flags, subject, data.toString() || subject)
-      this.log(msgId)
+      await sendEmail(flags, subject, data.toString() || subject)
+      //this.log(msgId)
     }
   }
 }
