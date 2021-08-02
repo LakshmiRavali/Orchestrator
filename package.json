@@ -1,7 +1,7 @@
 {
   "name": "orchestrator",
   "description": "Send the sms notification after execution of command",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Ravali Rimmalapudi",
   "bin": {
     "orchestrator": "./bin/run"
