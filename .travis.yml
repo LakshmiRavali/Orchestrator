@@ -12,8 +12,8 @@ deploy:
   email: lakshmiravali.rimmalapudi@gmail.com
   api_key: "7be3f06c-b011-4baa-a560-d0e09e0102c5"
   on:
-    tags: true
     all_branches: true
-    condition: $TRAVIS_TAG =~ ^\d+\.\d+\.\d+$
+    tags: true
+    condition: "$TRAVIS_TAG =~ ^\d+\.\d+\.\d+$"
     node: lts/*
   
