@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - node
+  - lts/*
+  - '10'
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y libsecret-1-dev
+deploy:
+  provider: npm
+  skip_cleanup: true
+  email: lakshmiravali.rimmalapudi@gmail.com
+  api_key: $NPM_TOKEN
+  on:
+    all_branches: true
+    tags: true
+    condition: $TRAVIS_TAG =~ ^\d+\.\d+\.\d+$
+    node: lts/*
+  
