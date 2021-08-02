@@ -1,5 +1,5 @@
 import {Command, flags} from '@oclif/command'
-const {spawnSync} = require('child_process')
+const {spawn} = require('child_process')
 const sendSms = require('../helpers/sms-sender.ts')
 const sendEmail = require('../helpers/email-sender.ts')
 
@@ -26,16 +26,28 @@ export class Run extends Command {
 
   async run() {
     const {args, flags} = this.parse(Run)
-    const child = spawnSync(args.command, {
+    const child = spawn(args.command, {
       shell: true,
       cwd: process.cwd(),
       env: process.env,
-      stdio: 'inherit',
+      stdio: ['inherit', 'pipe', 'pipe'],
       encoding: 'utf-8',
-      silent: true,
     })
+    child.stdout.pipe(process.stdout)
+    child.stderr.pipe(process.stdout)
+    child.on('close', (data: number) => {
+      if (data !== 0) {
+        child.stderr.on('data', (error: any) => this.sendNotification(flags, args, true, error))
+      } else {
+        child.stdout.on('data', (data: any) => this.sendNotification(flags, args, false, data))
+      }
+    })
+    // child.stderr.on('data', (error: any) => this.sendNotification(flags, args, true, error))
+  }
+
+  async sendNotification(flags: { sms: any; jobName: any; email: any }, args: {  command?: any }, error: boolean, data: { toString: () => any }) {
     let subject = flags.jobName || args.command
-    if (child && child.status !== 0) {
+    if (error) {
       subject += ' execution failed.'
     } else {
       subject += ' execution successful'
@@ -47,7 +59,7 @@ export class Run extends Command {
     }
 
     if (flags.email) {
-      const msgId = await sendEmail(flags, subject, subject)
+      const msgId = await sendEmail(flags, subject, data.toString() || subject)
       this.log(msgId)
     }
   }
