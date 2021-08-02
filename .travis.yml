@@ -7,12 +7,12 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install -y libsecret-1-dev
 deploy:
-  - provider: npm
-    skip_cleanup: true
-    edge: true
-    email: lakshmiravali.rimmalapudi@gmail.com
-    api_key: "7be3f06c-b011-4baa-a560-d0e09e0102c5"
-    on:
-      tags: true
-      condition: "$TRAVIS_TAG =~ ^\d+\.\d+\.\d+$"
-      node: lts/*
+- provider: npm
+  skip_cleanup: true
+  edge: true
+  email: lakshmiravali.rimmalapudi@gmail.com
+  api_key: "7be3f06c-b011-4baa-a560-d0e09e0102c5"
+  on:
+    tags: true
+    condition: "$TRAVIS_TAG =~ ^\d+\.\d+\.\d+$"
+    node: lts/*
