@@ -19,7 +19,7 @@ $ npm install -g orchestrator
 $ orchestrator COMMAND
 running command...
 $ orchestrator (-v|--version|version)
-orchestrator/0.0.0 darwin-x64 node-v16.2.0
+orchestrator/0.0.1 darwin-x64 node-v16.5.0
 $ orchestrator --help [COMMAND]
 USAGE
   $ orchestrator COMMAND
@@ -28,28 +28,8 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`orchestrator run [COMMAND]`](#orchestrator-run-file)
 * [`orchestrator help [COMMAND]`](#orchestrator-help-command)
-
-## `orchestrator run [COMMAND]`
-
-describe the command here
-
-```
-USAGE
-  $ orchestrator run [COMMAND]
-
-OPTIONS
-  -e, --email=email      Email id to send command execution status
-  -h, --help             show CLI help
-  -j, --jobName=jobName  Executing job name
-  -s, --sms=sms          Phone number to send command execution status
-
-EXAMPLE
-  $ orchestrator run "commandToBeExecuted" --sms=phoneNumber
-```
-
-_See code: [src/commands/run.ts](https://github.com/appBootcamp/orchestrator/blob/v0.0.0/src/commands/run.ts)_
+* [`orchestrator run COMMAND`](#orchestrator-run-command)
 
 ## `orchestrator help [COMMAND]`
 
@@ -67,4 +47,25 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.2/src/commands/help.ts)_
+
+## `orchestrator run COMMAND`
+
+```
+USAGE
+  $ orchestrator run COMMAND
+
+ARGUMENTS
+  COMMAND  Command to be executed.
+
+OPTIONS
+  -e, --email=email      Email id to send command execution status
+  -h, --help             show CLI help
+  -j, --jobName=jobName  Executing job name
+  -s, --sms=sms          Phone number to send command execution status
+
+EXAMPLE
+  $ orchestrator run "commandToBeExecuted" --sms=phoneNumber
+```
+
+_See code: [src/commands/run.ts](https://github.com/appBootcamp/orchestrator/blob/v0.0.1/src/commands/run.ts)_
 <!-- commandsstop -->
