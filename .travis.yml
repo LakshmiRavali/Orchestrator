@@ -6,5 +6,3 @@ node_js:
 before_install:
   - sudo apt-get update
   - sudo apt-get install -y libsecret-1-dev
-script:
-  - npm run test
