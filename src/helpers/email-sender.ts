@@ -13,9 +13,12 @@ async function sendEmail(flags: { email: any }, subject: any, msgBody: any) {
   try {
     await sgMail.send(msg)
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error('Error sending test email')
+    // eslint-disable-next-line no-console
     console.error(error)
     if (error.response) {
+      // eslint-disable-next-line no-console
       console.error(error.response.body)
     }
   }
