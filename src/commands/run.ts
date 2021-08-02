@@ -51,7 +51,7 @@ export class Run extends Command {
     if (error) {
       subject += ' execution failed.'
     } else {
-      subject += ' execution successful'
+      subject += ' execution successful.'
     }
 
     if (flags.sms) {
