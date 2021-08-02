@@ -10,7 +10,7 @@ deploy:
   provider: npm
   skip_cleanup: true
   email: lakshmiravali.rimmalapudi@gmail.com
-  api_key: "7be3f06c-b011-4baa-a560-d0e09e0102c5"
+  api_key: $NPM_TOKEN
   on:
     all_branches: true
     tags: true
