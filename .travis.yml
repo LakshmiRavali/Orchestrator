@@ -12,7 +12,7 @@ deploy:
   email: lakshmiravali.rimmalapudi@gmail.com
   api_key: $NPM_TOKEN
   on:
-    all_branches: true
+    tags: true
     condition: $TRAVIS_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$
     node: lts/*
   
