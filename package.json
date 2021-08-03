@@ -1,5 +1,5 @@
 {
-  "name": "orchestrator",
+  "name": "orchestrate-command-status",
   "description": "Send the sms notification after execution of command",
   "version": "0.0.19",
   "author": "Ravali Rimmalapudi",

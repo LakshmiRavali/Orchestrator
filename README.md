@@ -15,11 +15,11 @@ Send the sms and email notification after execution of command
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g orchestrator
+$ npm install -g orchestrate-command-status
 $ orchestrator COMMAND
 running command...
 $ orchestrator (-v|--version|version)
-orchestrator/0.0.19 darwin-x64 node-v16.5.0
+orchestrate-command-status/0.0.19 darwin-x64 node-v16.5.0
 $ orchestrator --help [COMMAND]
 USAGE
   $ orchestrator COMMAND
@@ -58,10 +58,10 @@ ARGUMENTS
   COMMAND  Command to be executed.
 
 OPTIONS
-  -e, --email=email      Email id to send command execution status
+  -e, --email=email      Email id to send command execution status.
   -h, --help             show CLI help
   -j, --jobName=jobName  Executing job name
-  -s, --sms=sms          Phone number to send command execution status
+  -s, --sms=sms          Phone number to send command execution status.
 
 EXAMPLE
   $ orchestrator run "commandToBeExecuted" --sms=phoneNumber
