@@ -1,7 +1,7 @@
 {
   "name": "orchestrate-command-status",
   "description": "Send the sms notification after execution of command",
-  "version": "0.0.24",
+  "version": "0.0.24-development",
   "author": "Ravali Rimmalapudi",
   "bin": {
     "orchestrator": "./bin/run"
@@ -54,7 +54,8 @@
     "posttest": "echo after test",
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "echo This is a test!",
-    "version": "oclif-dev readme && git add README.md"
+    "version": "oclif-dev readme && git add README.md",
+    "semantic-release": "semantic-release"
   },
   "types": "lib/index.d.ts",
   "dependencies": {
