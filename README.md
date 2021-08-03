@@ -19,7 +19,7 @@ $ npm install -g orchestrate-command-status
 $ orchestrator COMMAND
 running command...
 $ orchestrator (-v|--version|version)
-orchestrate-command-status/0.0.22 darwin-x64 node-v16.5.0
+orchestrate-command-status/0.0.23 darwin-x64 node-v16.5.0
 $ orchestrator --help [COMMAND]
 USAGE
   $ orchestrator COMMAND
@@ -67,5 +67,5 @@ EXAMPLE
   $ orchestrator run "commandToBeExecuted" --sms=phoneNumber
 ```
 
-_See code: [src/commands/run.ts](https://github.com/lakshmiravali/orchestrator/blob/v0.0.22/src/commands/run.ts)_
+_See code: [src/commands/run.ts](https://github.com/lakshmiravali/orchestrator/blob/v0.0.23/src/commands/run.ts)_
 <!-- commandsstop -->
