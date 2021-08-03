@@ -19,7 +19,7 @@ $ npm install -g orchestrate-command-status
 $ orchestrator COMMAND
 running command...
 $ orchestrator (-v|--version|version)
-orchestrate-command-status/0.0.19 darwin-x64 node-v16.5.0
+orchestrate-command-status/0.0.20 darwin-x64 node-v16.5.0
 $ orchestrator --help [COMMAND]
 USAGE
   $ orchestrator COMMAND
@@ -60,12 +60,12 @@ ARGUMENTS
 OPTIONS
   -e, --email=email      Email id to send command execution status.
   -h, --help             show CLI help
-  -j, --jobName=jobName  Executing job name
+  -j, --jobName=jobName  Executing job name.
   -s, --sms=sms          Phone number to send command execution status.
 
 EXAMPLE
   $ orchestrator run "commandToBeExecuted" --sms=phoneNumber
 ```
 
-_See code: [src/commands/run.ts](https://github.com/lakshmiravali/orchestrator/blob/v0.0.19/src/commands/run.ts)_
+_See code: [src/commands/run.ts](https://github.com/lakshmiravali/orchestrator/blob/v0.0.20/src/commands/run.ts)_
 <!-- commandsstop -->
