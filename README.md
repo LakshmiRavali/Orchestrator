@@ -6,7 +6,7 @@ Send the sms and email notification after execution of command
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/orchestrator.svg)](https://npmjs.org/package/orchestrator)
 [![Downloads/week](https://img.shields.io/npm/dw/orchestrator.svg)](https://npmjs.org/package/orchestrator)
-[![License](https://img.shields.io/npm/l/orchestrator.svg)](https://github.com/appBootcamp/orchestrator/blob/master/package.json)
+[![License](https://img.shields.io/npm/l/orchestrator.svg)](https://github.com/lakshmiravali/orchestrator/blob/master/package.json)
 
 <!-- toc -->
 * [Usage](#usage)
@@ -67,5 +67,5 @@ EXAMPLE
   $ orchestrator run "commandToBeExecuted" --sms=phoneNumber
 ```
 
-_See code: [src/commands/run.ts](https://github.com/appBootcamp/orchestrator/blob/v0.0.19/src/commands/run.ts)_
+_See code: [src/commands/run.ts](https://github.com/lakshmiravali/orchestrator/blob/v0.0.19/src/commands/run.ts)_
 <!-- commandsstop -->

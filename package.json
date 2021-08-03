@@ -6,7 +6,7 @@
   "bin": {
     "orchestrator": "./bin/run"
   },
-  "bugs": "https://github.com/appBootcamp/orchestrator/issues",
+  "bugs": "https://github.com/lakshmiravali/orchestrator/issues",
   "devDependencies": {
     "@oclif/dev-cli": "1.26.0",
     "@oclif/test": "1.2.8",
@@ -33,7 +33,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/appBootcamp/orchestrator",
+  "homepage": "https://github.com/lakshmiravali/orchestrator",
   "keywords": [
     "oclif"
   ],
@@ -46,7 +46,7 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "appBootcamp/orchestrator",
+  "repository": "lakshmiravali/orchestrator",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "echo after test",
