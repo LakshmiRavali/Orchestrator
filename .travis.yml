@@ -13,6 +13,6 @@ deploy:
   api_key: $NPM_TOKEN
   on:
     tags: true
-    condition: $TRAVIS_TAG =~ ^[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+$
+    condition: $TRAVIS_TAG =~ ^[:digit:]+\.[:digit:]+\.[:digit:]+$
     node: lts/*
 
