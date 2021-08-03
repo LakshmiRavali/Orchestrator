@@ -8,8 +8,9 @@
   },
   "bugs": "https://github.com/lakshmiravali/orchestrator/issues",
   "devDependencies": {
-    "@oclif/dev-cli": "1.26.0",
-    "@oclif/test": "1.2.8",
+    "@oclif/dev-cli": "^1.22.2",
+    "@oclif/test": "^1.2.6",
+    "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
     "@types/chai": "4.2.18",
     "@types/mocha": "5.2.7",
