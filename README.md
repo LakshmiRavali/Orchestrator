@@ -19,7 +19,7 @@ $ npm install -g orchestrate-command-status
 $ orchestrator COMMAND
 running command...
 $ orchestrator (-v|--version|version)
-orchestrate-command-status/0.0.24-development darwin-x64 node-v16.5.0
+orchestrate-command-status/0.0.0-development darwin-x64 node-v16.5.0
 $ orchestrator --help [COMMAND]
 USAGE
   $ orchestrator COMMAND

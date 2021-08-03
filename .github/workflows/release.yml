@@ -39,4 +39,36 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  oclifRelease:
+    name: Publish for ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    needs: [release]
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            artifact_name: orchestrator-v0.0.0
+            asset_name: orchestrator-v0.0.0-linux-x64
+#          - os: windows-latest
+#            artifact_name: mything.exe
+#            asset_name: mything-windows-amd64
+#          - os: macos-latest
+#            artifact_name: mything
+#            asset_name: mything-macos-amd64
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: 'Get Previous tag'
+        id: previoustag
+        uses: "WyriHaximus/github-action-get-previous-tag@v1"
+        with:
+          fallback: 1.0.0
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: dist/deb/${{ matrix.artifact_name }}
+          asset_name: ${{ matrix.asset_name }}
+          tag: ${{ steps.previoustag.outputs.tag }}
+
 
