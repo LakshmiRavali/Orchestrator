@@ -7,10 +7,10 @@ export class Run extends Command {
   static flags = {
     help: flags.help({char: 'h'}),
     // flag with no value (-s, --sms)
-    sms: flags.string({char: 's', description: 'Phone number to send command execution status'}),
+    sms: flags.string({char: 's', description: 'Phone number to send command execution status.'}),
     // flag with no value (-f, --jobName)
     jobName: flags.string({char: 'j', description: 'Executing job name'}),
-    email: flags.string({char: 'e', description: 'Email id to send command execution status'}),
+    email: flags.string({char: 'e', description: 'Email id to send command execution status.'}),
   }
 
   static args = [
