@@ -53,11 +53,11 @@ jobs:
           - os: ubuntu-latest
             artifact_name: win/orchestrator_0.0.0-1.exe
             asset_name: orchestrator.exe
-            command_name: sudo apt-get install nsis & sudo oclif-dev pack:win
-#           - os: macos-latest
-#             artifact_name: macos/orchestrator_0.0.0-1.pkg
-#             asset_name: orchestrator.pkg
-#             command_name: macos
+            command_name: npm i makensis & sudo oclif-dev pack:win
+           - os: macos-latest
+             artifact_name: macos/orchestrator_0.0.0-1.pkg
+             asset_name: orchestrator.pkg
+             command_name: oclif-dev pack:macos
 
     steps:
       - uses: actions/checkout@v2

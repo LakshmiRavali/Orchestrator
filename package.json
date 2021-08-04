@@ -46,7 +46,10 @@
     "bin": "orchestrator",
     "plugins": [
       "@oclif/plugin-help"
-    ]
+    ],
+    "macos": {
+      "identifier": "com.orchestrator.command"
+    }
   },
   "repository": "lakshmiravali/orchestrator",
   "scripts": {
