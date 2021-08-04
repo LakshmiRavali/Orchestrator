@@ -63,7 +63,7 @@ jobs:
         uses: "WyriHaximus/github-action-get-previous-tag@v1"
         with:
           fallback: 1.0.0
-      - run: npm ci
+      - run: npm cache clear & npm ci
       - run: npm install -g @oclif/dev-cli
       - run: oclif-dev pack:deb
       - name: Upload binaries to release
