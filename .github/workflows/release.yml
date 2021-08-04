@@ -47,8 +47,8 @@ jobs:
       matrix:
         include:
           - os: ubuntu-latest
-            artifact_name: orchestrator-v0.0.0
-            asset_name: orchestrator-v0.0.0-linux-x64
+            artifact_name: orchestrator
+            asset_name: orchestrator_0.0.0-1_amd64.deb
 #          - os: windows-latest
 #            artifact_name: mything.exe
 #            asset_name: mything-windows-amd64
