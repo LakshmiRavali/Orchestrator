@@ -52,7 +52,7 @@ jobs:
             asset_name: orchestrator.deb
             command_name: sudo oclif-dev pack:deb
           - os: macos-latest
-            artifact_name: win/orchestrator_0.0.0-1.exe
+            artifact_name: win/orchestrator-v0.0.0-x86.exe
             asset_name: orchestrator.exe
             command_name: oclif-dev pack:win
           - os: macos-latest
