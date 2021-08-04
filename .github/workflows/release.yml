@@ -72,6 +72,7 @@ jobs:
       - run: |
             if [ "$RUNNER_OS" == "macOS" ]; then
               brew install makensis
+            fi
       - run: ${{ matrix.command_name }}
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
