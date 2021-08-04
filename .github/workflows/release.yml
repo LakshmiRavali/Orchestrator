@@ -48,13 +48,13 @@ jobs:
         include:
           - os: ubuntu-latest
             artifact_name: orchestrator_0.0.0-1_amd64.deb
-            asset_name: orchestrator_0.0.0-1_amd64.deb
-#          - os: windows-latest
-#            artifact_name: mything.exe
-#            asset_name: mything-windows-amd64
-#          - os: macos-latest
-#            artifact_name: mything
-#            asset_name: mything-macos-amd64
+            asset_name: deb/orchestrator.deb
+          - os: windows-latest
+            artifact_name: win/orchestrator_0.0.0-1.exe
+            asset_name: orchestrator.exe
+          - os: macos-latest
+            artifact_name: macos/orchestrator_0.0.0-1.pkg
+            asset_name: orchestrator.pkg
 
     steps:
       - uses: actions/checkout@v2
@@ -70,7 +70,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: dist/deb/${{ matrix.artifact_name }}
+          file: dist/${{ matrix.artifact_name }}
           asset_name: ${{ matrix.asset_name }}
           tag: ${{ steps.previoustag.outputs.tag }}
 
