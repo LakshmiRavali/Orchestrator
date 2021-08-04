@@ -24,25 +24,25 @@ jobs:
     - run: npm ci
     - run: npm test
 
-  release:
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npx semantic-release
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+#   release:
+#     runs-on: ubuntu-latest
+#     needs: [build]
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Use Node.js ${{ matrix.node-version }}
+#       uses: actions/setup-node@v2
+#       with:
+#         node-version: ${{ matrix.node-version }}
+#         cache: 'npm'
+#     - run: npm ci
+#     - run: npx semantic-release
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   oclifRelease:
     name: Publish for ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    needs: [release]
+    needs: [build]
     strategy:
       matrix:
         include:
@@ -65,7 +65,7 @@ jobs:
           fallback: 1.0.0
       - run: npm cache clear & npm ci
       - run: npm install -g @oclif/dev-cli
-      - run: oclif-dev pack:deb
+      - run: sudo oclif-dev pack:deb
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
