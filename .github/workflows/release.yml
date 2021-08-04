@@ -47,8 +47,8 @@ jobs:
       matrix:
         include:
           - os: ubuntu-latest
-            artifact_name: orchestrator_0.0.0-1_amd64.deb
-            asset_name: deb/orchestrator.deb
+            artifact_name: deb/orchestrator_0.0.0-1_amd64.deb
+            asset_name: orchestrator.deb
             command_name: sudo oclif-dev pack:deb
           - os: windows-latest
             artifact_name: win/orchestrator_0.0.0-1.exe
@@ -69,6 +69,7 @@ jobs:
       - run: npm cache clear & npm ci
       - run: npm install -g @oclif/dev-cli
       - run: ${{ matrix.command_name }}
+        continue-on-error: true
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
