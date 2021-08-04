@@ -61,16 +61,16 @@ jobs:
             command_name: oclif-dev pack:macos
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: 'Get Previous tag'
         id: previoustag
         uses: "WyriHaximus/github-action-get-previous-tag@v1"
         with:
           fallback: 1.0.0
       - run: npm cache clear & npm ci
-      - run: npm install -g @oclif/dev-cli & npm install -g makensis 
+      - run: npm install -g @oclif/dev-cli
+      - run: npm install -g makensis 
       - run: ${{ matrix.command_name }}
-        continue-on-error: true
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
