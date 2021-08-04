@@ -56,7 +56,7 @@ jobs:
             asset_name: orchestrator.exe
             command_name: sudo oclif-dev pack:win
           - os: macos-latest
-            artifact_name: macos/orchestrator_0.0.0-1.pkg
+            artifact_name: macos/orchestrator-v0.0.0.pkg
             asset_name: orchestrator.pkg
             command_name: oclif-dev pack:macos
 
