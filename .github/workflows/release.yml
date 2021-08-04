@@ -51,10 +51,10 @@ jobs:
             artifact_name: deb/orchestrator_0.0.0-1_amd64.deb
             asset_name: orchestrator.deb
             command_name: sudo oclif-dev pack:deb
-          - os: ubuntu-latest
+          - os: macos-latest
             artifact_name: win/orchestrator_0.0.0-1.exe
             asset_name: orchestrator.exe
-            command_name: sudo oclif-dev pack:win
+            command_name: brew install makensis & oclif-dev pack:win
           - os: macos-latest
             artifact_name: macos/orchestrator-v0.0.0.pkg
             asset_name: orchestrator.pkg
