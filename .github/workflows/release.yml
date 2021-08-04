@@ -54,7 +54,7 @@ jobs:
           - os: ubuntu-latest
             artifact_name: win/orchestrator_0.0.0-1.exe
             asset_name: orchestrator.exe
-            command_name: npm i makensis & sudo oclif-dev pack:win
+            command_name: sudo oclif-dev pack:win
           - os: macos-latest
             artifact_name: macos/orchestrator_0.0.0-1.pkg
             asset_name: orchestrator.pkg
@@ -68,7 +68,7 @@ jobs:
         with:
           fallback: 1.0.0
       - run: npm cache clear & npm ci
-      - run: npm install -g @oclif/dev-cli
+      - run: npm install -g @oclif/dev-cli & npm install -g makensis 
       - run: ${{ matrix.command_name }}
         continue-on-error: true
       - name: Upload binaries to release
