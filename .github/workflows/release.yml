@@ -60,7 +60,7 @@ jobs:
             command_name: oclif-dev pack:macos
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       - name: 'Get Previous tag'
         id: previoustag
         uses: "WyriHaximus/github-action-get-previous-tag@v1"
