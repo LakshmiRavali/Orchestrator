@@ -45,7 +45,7 @@ jobs:
     - run: npx semantic-release ${{github.event.inputs.dryRun}}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN_DUMMY }}
 #   oclifRelease:
 #     name: Publish for ${{ matrix.os }}
 #     runs-on: ${{ matrix.os }}
