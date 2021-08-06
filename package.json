@@ -3,6 +3,7 @@
   "description": "Send the sms notification after execution of command",
   "version": "0.0.0",
   "author": "Ravali Rimmalapudi",
+  "private": true
   "bin": {
     "orchestrator": "./bin/run"
   },
