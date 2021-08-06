@@ -43,7 +43,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npx semantic-release {{github.event.inputs.dryRun}}
+    - run: npx semantic-release ${{github.event.inputs.dryRun}}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
