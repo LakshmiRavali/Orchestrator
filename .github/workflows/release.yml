@@ -21,6 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
         GITHUB_SERVER_URL: https://code.hq.twilio.com
+        GITHUB_API_URL: https://code.hq.twilio.com
     strategy:
       matrix:
         node-version: [10.x]
