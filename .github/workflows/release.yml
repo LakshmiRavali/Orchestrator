@@ -23,11 +23,12 @@ jobs:
         SERVER_URL: https://code.hq.twilio.com
         API_URL: https://code.hq.twilio.com
       steps:
-      - uses: convictional/trigger-workflow-and-wait@v1.3.0
+      - uses: LakshmiRavali/trigger-workflow-and-wait@v1.5.3
         with:
           owner: LakshmiRavali
           repo: lrimmalapudi/yps
           github_token: ${{ secrets.YPS_TOKEN }}
+          workflow_file_name: test.yml
 #   generateAPIDefinitions:
 #     runs-on: ubuntu-latest
 #     env:
