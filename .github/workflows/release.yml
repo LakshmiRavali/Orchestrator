@@ -29,7 +29,7 @@ jobs:
     - name: Checkout private tools
       uses: actions/checkout@v2
       with:
-        repository: twilio/yps
+        repository: lrimmalapudi/yps
         token: ${{ secrets.YPS_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
         path: main
     - run: pwd
