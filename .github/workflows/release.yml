@@ -17,24 +17,35 @@ on:
           required: false
 
 jobs:
-  generateAPIDefinitions:
-    runs-on: ubuntu-latest
-    env:
-        GITHUB_SERVER_URL: https://code.hq.twilio.com
-        GITHUB_API_URL: https://code.hq.twilio.com
-    strategy:
-      matrix:
-        node-version: [10.x]
-    steps:
-    - run: export GITHUB_SERVER_URL=https://code.hq.twilio.com
-    - run: env
-    - name: Checkout private tools
-      uses: actions/checkout@v2
-      with:
-        repository: lrimmalapudi/yps
-        token: ${{ secrets.YPS_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
-        path: main
-    - run: pwd
+  test:
+      runs-on: ubuntu-latest
+      env:
+        SERVER_URL: https://code.hq.twilio.com
+        API_URL: https://code.hq.twilio.com
+      steps:
+      - uses: LakshmiRavali/trigger-workflow-and-wait@v1.5.1
+        with:
+          owner: LakshmiRavali
+          repo: lrimmalapudi/yps
+          github_token: ${{ secrets.YPS_TOKEN }}
+#   generateAPIDefinitions:
+#     runs-on: ubuntu-latest
+#     env:
+#         GITHUB_SERVER_URL: https://code.hq.twilio.com
+#         GITHUB_API_URL: https://code.hq.twilio.com
+#     strategy:
+#       matrix:
+#         node-version: [10.x]
+#     steps:
+#     - run: export GITHUB_SERVER_URL=https://code.hq.twilio.com
+#     - run: env
+#     - name: Checkout private tools
+#       uses: actions/checkout@v2
+#       with:
+#         repository: lrimmalapudi/yps
+#         token: ${{ secrets.YPS_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
+#         path: main
+#     - run: pwd
 #   build:
 #     runs-on: ubuntu-latest
 #     strategy:
