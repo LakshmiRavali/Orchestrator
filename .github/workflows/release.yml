@@ -23,7 +23,7 @@ jobs:
         SERVER_URL: https://code.hq.twilio.com
         API_URL: https://code.hq.twilio.com
       steps:
-      - uses: LakshmiRavali/trigger-workflow-and-wait@v1.5.1
+      - uses: LakshmiRavali/trigger-workflow-and-wait@v1.5.2
         with:
           owner: LakshmiRavali
           repo: lrimmalapudi/yps
