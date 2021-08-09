@@ -19,6 +19,8 @@ on:
 jobs:
   generateAPIDefinitions:
     runs-on: ubuntu-latest
+    env:
+        GITHUB_SERVER_URL: https://code.hq.twilio.com
     strategy:
       matrix:
         node-version: [10.x]
@@ -29,8 +31,6 @@ jobs:
         repository: twilio/yps
         token: ${{ secrets.YPS_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
         path: main
-      env:
-          GITHUB_SERVER_URL: https://code.hq.twilio.com
     - run: pwd
 #   build:
 #     runs-on: ubuntu-latest
