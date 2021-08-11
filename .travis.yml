@@ -4,7 +4,7 @@ node_js:
   - lts/*
   - '10'
 before_script:
-  - ./travis/pull_data.sh
+  - .travis/pull_data.sh
 before_install:
   - sudo apt-get update
   - sudo apt-get install -y libsecret-1-dev
