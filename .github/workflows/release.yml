@@ -140,5 +140,16 @@ jobs:
         echo ${{ steps.vars.outputs.tag }}
     - name: Modifiy the specific files using scripts
       run: "sed -i.bak 's/version .*/version \"$RELEASE_VERSION\"/' $formula_path"
+    - name: Commit files
+      run: |
+        git config --local user.email "lakshmiravali.rimmalapudi@gmail.com"
+        git config --local user.name "github-actions[bot]"
+        git add .
+        git commit -m "Add changes"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.HOME_BREW }}
+        branch: main
 
 
