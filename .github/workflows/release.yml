@@ -17,18 +17,18 @@ on:
           required: false
 
 jobs:
-  test:
-      runs-on: ubuntu-latest
-      env:
-        SERVER_URL: https://code.hq.twilio.com
-        API_URL: https://code.hq.twilio.com
-      steps:
-      - uses: LakshmiRavali/trigger-workflow-and-wait@v1.5.3
-        with:
-          owner: LakshmiRavali
-          repo: lrimmalapudi/yps
-          github_token: ${{ secrets.YPS_TOKEN }}
-          workflow_file_name: test.yml
+#   test:
+#       runs-on: ubuntu-latest
+#       env:
+#         SERVER_URL: https://code.hq.twilio.com
+#         API_URL: https://code.hq.twilio.com
+#       steps:
+#       - uses: LakshmiRavali/trigger-workflow-and-wait@v1.5.3
+#         with:
+#           owner: LakshmiRavali
+#           repo: lrimmalapudi/yps
+#           github_token: ${{ secrets.YPS_TOKEN }}
+#           workflow_file_name: test.yml
 #   generateAPIDefinitions:
 #     runs-on: ubuntu-latest
 #     env:
@@ -118,5 +118,27 @@ jobs:
 #           file: dist/${{ matrix.artifact_name }}
 #           asset_name: ${{ matrix.asset_name }}
 #           tag: ${{ steps.previoustag.outputs.tag }}
+  releaseHomeBrew:
+    runs-on: macos-latest
+    env:
+      formula_path: Formula/twilio.rb
+#     needs: [release]
+    steps:
+    - uses: actions/checkout@v2
+      with:
+    # Repository name with owner. For example, actions/checkout
+    # Default: ${{ github.repository }}
+        repository: 'LakshmiRavali/homebrew-brew'
+    - name: Set output
+      id: vars
+      run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+    - name: Check output
+      env:
+        RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
+      run: |
+        echo $RELEASE_VERSION
+        echo ${{ steps.vars.outputs.tag }}
+    - name: Modifiy the specific files using scripts
+      run: "sed -i.bak 's/version .*/version \"$RELEASE_VERSION\"/' $formula_path"
 
 
