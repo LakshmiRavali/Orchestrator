@@ -144,6 +144,7 @@ jobs:
       run: |
         git config --local user.email "lakshmiravali.rimmalapudi@gmail.com"
         git config --local user.name "lakshmiravali"
+        git status
         git add .
         git commit -m "Add changes"
     - name: Push changes
