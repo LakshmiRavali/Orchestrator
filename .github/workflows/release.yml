@@ -149,6 +149,7 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
+        repository: 'LakshmiRavali/homebrew-brew'
         github_token: ${{ secrets.HOME_BREW }}
         branch: main
 
