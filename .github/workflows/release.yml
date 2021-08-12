@@ -129,6 +129,7 @@ jobs:
     # Repository name with owner. For example, actions/checkout
     # Default: ${{ github.repository }}
         repository: 'LakshmiRavali/homebrew-brew'
+        token:  ${{ secrets.HOME_BREW }}
     - name: Set output
       id: vars
       run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
