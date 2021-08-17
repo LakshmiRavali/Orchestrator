@@ -47,35 +47,34 @@ jobs:
 #         token: ${{ secrets.YPS_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
 #         path: main
 #     - run: pwd
-#   build:
-#     runs-on: ubuntu-latest
-#     strategy:
-#       matrix:
-#         node-version: [10.x]
-#     steps:
-#     - uses: actions/checkout@v2
-#     - name: Use Node.js ${{ matrix.node-version }}
-#       uses: actions/setup-node@v2
-#       with:
-#         node-version: ${{ matrix.node-version }}
-#         cache: 'npm'
-#     - run: npm ci
-#     - run: npm test
-#   release:
-#     runs-on: ubuntu-latest
-#     needs: [build]
-#     steps:
-#     - uses: actions/checkout@v2
-#     - name: Use Node.js ${{ matrix.node-version }}
-#       uses: actions/setup-node@v2
-#       with:
-#         node-version: ${{ matrix.node-version }}
-#         cache: 'npm'
-#     - run: npm ci
-#     - run: npx semantic-release ${{github.event.inputs.dryRun}}
-#       env:
-#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#         NPM_TOKEN: ${{ secrets.NPM_TOKEN_DUMMY }}
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: npm test
+  release:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci && npm run dist && npx semantic-release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN_DUMMY }}
 #   oclifRelease:
 #     name: Publish for ${{ matrix.os }}
 #     runs-on: ${{ matrix.os }}
