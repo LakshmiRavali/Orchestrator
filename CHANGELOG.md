@@ -1,3 +1,10 @@
+## [3.5.6](https://github.com/lakshmiravali/orchestrator/compare/v3.5.5...v3.5.6) (2021-08-25)
+
+
+### Bug Fixes
+
+* Updated minor without npm publish ([545345c](https://github.com/lakshmiravali/orchestrator/commit/545345c1e6251642665cefb0bae9648e32c3a745))
+
 ## [3.5.5](https://github.com/lakshmiravali/orchestrator/compare/v3.5.4...v3.5.5) (2021-08-25)
 
 
