@@ -1,7 +1,7 @@
 {
   "name": "orchestrate-command-status",
   "description": "Send the sms notification after execution of command",
-  "version": "0.0.0",
+  "version": "3.5.5",
   "author": "Ravali Rimmalapudi",
   "bin": {
     "orchestrator": "./bin/run"
