@@ -74,7 +74,7 @@ jobs:
     - run: npm ci && npx semantic-release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN_DUMMY }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 #   oclifRelease:
 #     name: Publish for ${{ matrix.os }}
 #     runs-on: ${{ matrix.os }}
