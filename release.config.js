@@ -2,8 +2,8 @@ module.exports = {
   branches: [
     'master',
     {
-      name: 'beta',
-      prerelease: true
+      name: 'master',
+      prerelease: 'rc'
     }
   ],
   plugins: [
@@ -15,12 +15,7 @@ module.exports = {
         changelogFile: 'CHANGELOG.md'
       }
     ],
-    [
-      '@semantic-release/npm',
-      {
-        npmPublish: false,
-      },
-    ],
+    '@semantic-release/npm',
     '@semantic-release/github',
     [
       '@semantic-release/git',
