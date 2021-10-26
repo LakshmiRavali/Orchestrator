@@ -1,3 +1,11 @@
+## [3.5.7](https://github.com/lakshmiravali/orchestrator/compare/v3.5.6...v3.5.7) (2021-10-26)
+
+
+### Bug Fixes
+
+* Added bn ([f4c0427](https://github.com/lakshmiravali/orchestrator/commit/f4c0427107b7d50129b5ef7701313b4cb5c21e02))
+* Updated ([0601d9b](https://github.com/lakshmiravali/orchestrator/commit/0601d9b79c284f53a0ca57fdd6b82694dcbd445d))
+
 ## [3.5.7-rc.1](https://github.com/lakshmiravali/orchestrator/compare/v3.5.6...v3.5.7-rc.1) (2021-10-26)
 
 
