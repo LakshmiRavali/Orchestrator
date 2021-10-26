@@ -1,8 +1,8 @@
 module.exports = {
   branches: [
-    'github_actions',
+    'master',
     {
-      name: 'master',
+      name: 'github_actions',
       prerelease: 'rc'
     }
   ],
