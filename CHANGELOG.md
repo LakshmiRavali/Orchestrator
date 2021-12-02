@@ -1,3 +1,10 @@
+## [3.5.8-rc.2](https://github.com/lakshmiravali/orchestrator/compare/v3.5.8-rc.1...v3.5.8-rc.2) (2021-12-02)
+
+
+### Bug Fixes
+
+* Updated tagformat ([515f088](https://github.com/lakshmiravali/orchestrator/commit/515f0887916923d182f7ba207901bce9e487f6a9))
+
 ## [3.5.8-rc.1](https://github.com/lakshmiravali/orchestrator/compare/v3.5.7...v3.5.8-rc.1) (2021-10-26)
 
 
